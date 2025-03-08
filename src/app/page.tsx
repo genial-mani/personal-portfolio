@@ -1,5 +1,5 @@
 import { skillInterface } from "@/utils/interfaces";
-import { allSkills, languages } from "@/utils/skills";
+import { allSkills } from "@/utils/skills";
 
 export default function Home() {
   return (

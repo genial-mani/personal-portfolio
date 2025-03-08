@@ -11,7 +11,7 @@ type SpotlightCardProps = {
 const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = "",
-  spotlightColor = "rgba(255, 255, 255, 0.25)",
+  spotlightColor = "#5e60e766",
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);

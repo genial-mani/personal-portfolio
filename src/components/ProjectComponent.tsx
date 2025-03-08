@@ -13,8 +13,8 @@ export default function ProjectComponent({
   project: projectInterface;
 }) {
   return (
-    <SpotlightCard>
-      <div className="group w-full max-w-[400px] min-h-[565px] text-slate-50 rounded-xl overflow-hidden bg-slate-900">
+    <SpotlightCard className="w-fit h-fit">
+      <div className="group w-full max-w-[400px] min-h-[565px] text-slate-50 rounded-xl overflow-hidden bg-[#000]">
         <div className="w-full h-52 overflow-hidden">
           <img
             src={project?.src}
@@ -35,7 +35,7 @@ export default function ProjectComponent({
                   slots={{ transition: Zoom }}
                   slotProps={{ transition: { timeout: 300 } }}
                 >
-                  <Tech.icon size={40} />
+                  {Tech.name === "Framer" || Tech.name === "Render" ? <Tech.icon size={40} color={'white'}/>  :<Tech.icon size={40} />}
                 </Tooltip>
               </div>
             ))}
@@ -50,7 +50,11 @@ export default function ProjectComponent({
                   slots={{ transition: Zoom }}
                   slotProps={{ transition: { timeout: 300 } }}
                 >
+                  <div className="flex items-center gap-1 border-[1px] border-slate-50 px-2 py-1 rounded-lg hover:bg-[linear-gradient(90deg,blue,purple)]">
                   <LinkRoundedIcon fontSize="medium" />
+                  Live
+                  </div>
+                  
                 </Tooltip>
               </Link>
             )}
@@ -62,7 +66,10 @@ export default function ProjectComponent({
                   slots={{ transition: Zoom }}
                   slotProps={{ transition: { timeout: 300 } }}
                 >
+                  <div className="flex items-center gap-1 border-[1px] border-slate-50 px-2 py-1 rounded-lg">
               <GitHubLight size={20} />
+              Github
+                  </div>
                 </Tooltip>
             </Link>
           </div>
